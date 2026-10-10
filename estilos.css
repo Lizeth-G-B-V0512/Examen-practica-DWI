@@ -1,0 +1,257 @@
+/* =====================================================
+   ESTE ARCHIVO ES EL "MAQUILLAJE" DE LA PÁGINA
+
+
+/* ---------- Reglas para toda la página ---------- */
+
+/* Quitamos los espacios que el navegador pone solito */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Tipo de letra y color de fondo de toda la página */
+body {
+  font-family: "Segoe UI", Verdana, sans-serif;
+  background: #eef3f1;   /* verde muy clarito */
+  color: #1f2d2a;        /* color de la letra */
+}
+
+
+/* ---------- Menú de arriba ---------- */
+
+/* La barra verde de arriba */
+header {
+  background: #3e3881;
+  padding: 15px 20px;
+  display: flex;                    /* pone las cosas en fila */
+  justify-content: space-between;   /* título a la izquierda, menú a la derecha */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* El título "Práctica DWI" */
+header .logo {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;   /* le quita la rayita de abajo */
+}
+
+/* Los enlaces del menú */
+nav a {
+  color: #d9ebe4;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+/* Cuando pasas el mouse encima de un enlace */
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+
+/* ---------- Parte central ---------- */
+
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+/* La caja blanca donde va cada proyecto */
+.caja {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;        /* esquinas redondeadas */
+  border: 1px solid #cddbd6;
+}
+
+/* Los títulos grandes */
+h1 {
+  margin-bottom: 15px;
+}
+
+
+/* ---------- Formularios (cajitas y botones) ---------- */
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Las cajitas para escribir, las listas para elegir y los botones */
+select,
+input,
+button {
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #9fb5ad;
+}
+
+/* Pone varias cajitas una al lado de la otra */
+.fila {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* Cada cajita de la fila ocupa el mismo espacio */
+.fila select,
+.fila input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Los botones verdes */
+button {
+  width: 100%;
+  background: #2f5d50;
+  color: white;
+  border: none;
+  cursor: pointer;   /* sale la manita al pasar el mouse */
+}
+
+/* El botón se oscurece al pasar el mouse */
+button:hover {
+  background: #244a3f;
+}
+
+/* Cuando el botón está apagado se ve gris */
+button:disabled {
+  background: #a9b8b2;
+  cursor: not-allowed;
+}
+
+
+/* ---------- Mensajes de resultado ---------- */
+
+#resultado {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Mensaje bueno: verde */
+.ok {
+  color: #2f5d50;
+}
+
+/* Mensaje de error: rojo */
+.error {
+  color: #b3261e;
+}
+
+/* Texto chiquito de ayuda */
+.ayuda {
+  margin-bottom: 15px;
+  color: #55665f;
+}
+
+
+/* ---------- Tarjetas de la página de inicio ---------- */
+
+.proyecto {
+  display: block;
+  background: white;
+  border: 1px solid #cddbd6;
+  border-left: 6px solid #2f5d50;   /* rayita verde gruesa a la izquierda */
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 15px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.proyecto:hover {
+  background: #f6faf8;
+}
+
+.proyecto h2 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+
+/* ---------- Lista de tareas ---------- */
+
+/* La cajita para escribir la tarea y su botón, en fila */
+.fila-tarea {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.fila-tarea input {
+  flex: 1;
+  min-width: 0;
+}
+
+.fila-tarea button {
+  width: auto;   /* este botón no ocupa todo el ancho */
+}
+
+/* Quitamos los puntitos de la lista */
+#lista {
+  list-style: none;
+}
+
+/* Cada renglón de la lista */
+#lista li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e8e4;   /* rayita para separar */
+}
+
+/* El texto ocupa todo el espacio que sobra */
+#lista li span {
+  flex: 1;
+}
+
+/* La casilla para palomear */
+#lista li input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Tarea terminada: texto tachado y gris */
+#lista li.completada span {
+  text-decoration: line-through;
+  color: #8a9a94;
+}
+
+/* Botón rojo para eliminar */
+.borrar {
+  width: auto;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  background: #b3261e;
+}
+
+.borrar:hover {
+  background: #8c1d17;
+}
+
+@media (max-width: 500px) {
+
+  /* El título y el menú se ponen uno arriba del otro */
+  header {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  /* Las cajitas se ponen una debajo de otra en vez de en fila */
+  .fila {
+    flex-direction: column;
+  }
+}

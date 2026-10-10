@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Para que se vean bien los acentos -->
+  <meta charset="UTF-8">
+  <!-- Para que se vea bien en el celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convertidor de temperatura</title>
+  <!-- Conectamos el diseño -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- MENÚ DE ARRIBA (igual en todas las páginas) -->
+  <header>
+    <a href="index.html" class="logo">Práctica DWI</a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="edad.html">Edad</a>
+      <a href="temperatura.html">Temperatura</a>
+      <a href="tareas.html">Tareas</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="caja">
+      <h1>Convertidor de temperatura</h1>
+      <p class="ayuda">Escribe la temperatura, elige las unidades y convierte.</p>
+
+      <!-- EL FORMULARIO -->
+      <form id="formTemp">
+        <div class="fila">
+
+          <!-- Cajita para escribir el número -->
+          <input type="number" id="valor" placeholder="0.00" step="any">
+
+          <!-- Lista: ¿de qué unidad viene? -->
+          <select id="origen">
+            <option value="">De</option>
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+
+          <!-- Lista: ¿a qué unidad la quieres pasar? -->
+          <select id="destino">
+            <option value="">A</option>
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+        </div>
+
+        <!-- El botón empieza APAGADO (disabled).
+             Se prende solo cuando llenas las 3 cosas de arriba. -->
+        <button type="submit" id="btnConvertir" disabled>Convertir</button>
+      </form>
+
+      <!-- Aquí aparece la respuesta -->
+      <p id="resultado"></p>
+    </div>
+  </main>
+
+  <!-- Conectamos el archivo que hace que todo funcione -->
+  <script src="temperatura.js"></script>
+</body>
+</html>

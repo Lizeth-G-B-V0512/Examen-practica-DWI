@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- MENÚ DE ARRIBA (igual en todas las páginas) -->
+  <header>
+    <a href="index.html" class="logo">Práctica DWI</a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="edad.html">Edad</a>
+      <a href="temperatura.html">Temperatura</a>
+      <a href="tareas.html">Tareas</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="caja">
+      <h1>Lista de tareas</h1>
+
+      <form id="formTarea" class="fila-tarea">
+        <input type="text" id="nuevaTarea" placeholder="Escribe una tarea y presiona Enter">
+        <button type="submit">Agregar</button>
+      </form>
+
+      <ul id="lista"></ul>
+    </div>
+  </main>
+
+  <!-- Conectamos el archivo que hace que todo funcione -->
+  <script src="tareas.js"></script>
+</body>
+</html>

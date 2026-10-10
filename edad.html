@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Para que se vean bien los acentos -->
+  <meta charset="UTF-8">
+  <!-- Para que se vea bien en el celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de edad</title>
+  <!-- Conectamos el diseño -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- MENÚ DE ARRIBA (igual en todas las páginas) -->
+  <header>
+    <a href="index.html" class="logo">Práctica DWI</a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="edad.html">Edad</a>
+      <a href="temperatura.html">Temperatura</a>
+      <a href="tareas.html">Tareas</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="caja">
+      <h1>Calculadora de edad</h1>
+
+      <!-- EL FORMULARIO -->
+      <form id="formEdad">
+        <label>Fecha de nacimiento:</label>
+
+        <!-- Tres listas para elegir: día, mes y año.
+             Están vacías a propósito: el archivo edad.js las llena.
+             Así hacemos nuestro propio selector de fecha. -->
+        <div class="fila">
+          <select id="dia"></select>
+          <select id="mes"></select>
+          <select id="anio"></select>
+        </div>
+
+        <button type="submit">Calcular</button>
+      </form>
+
+      <!-- Aquí aparece la respuesta (o el error) -->
+      <p id="resultado"></p>
+    </div>
+  </main>
+
+  <!-- Conectamos el archivo que hace que todo funcione -->
+  <script src="edad.js"></script>
+</body>
+</html>
